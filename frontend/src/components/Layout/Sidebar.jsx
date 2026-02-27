@@ -2,9 +2,7 @@ import React, { useContext, useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import logo from "../../assets/logo-4blue.png";
-import icon4white from "../../assets/4icon-white.png";
-import userIcon from "../../assets/4icon.png";
+import userIcon from "../../assets/4.png";
 
 const IconWrapper = ({ children }) => (
   <div
@@ -458,15 +456,33 @@ export default function Sidebar() {
               justifyContent: "center",
             }}
           >
-            <img
-              src={collapsed ? icon4white : logo}
-              alt="4blue"
-              style={{
-                width: collapsed ? 56 : 120,
-                height: "auto",
-                borderRadius: 12,
-              }}
-            />
+            {collapsed ? (
+              <div
+                aria-hidden="true"
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 14,
+                  background: "rgba(255,255,255,0.06)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 32,
+                  fontWeight: 800,
+                  color: "#ffffff",
+                  lineHeight: 1,
+                }}
+              >
+                4
+              </div>
+            ) : (
+              <div
+                className="logo-4chatting logo-4chatting--white"
+                style={{ width: 120 }}
+              >
+                4<span>chatting</span>
+              </div>
+            )}
           </button>
         </div>
 

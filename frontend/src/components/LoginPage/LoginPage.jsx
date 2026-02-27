@@ -1,8 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 
-import logo_4blue_blue from "../../assets/logo-4blue-blue.png";
-import _4icon from "../../assets/4icon.png";
+import _4icon from "../../assets/4.png";
 
 export default function LoginPage() {
   const { login, availableUsers = [], addAccount } = useContext(AuthContext);
@@ -182,7 +181,11 @@ export default function LoginPage() {
 
       <div className="login-right">
         <div className="login-card fade-in">
-          <img src={logo_4blue_blue} alt="4blue" className="brand-logo" />
+          <div className="brand-logo">
+            <div className="logo-4chatting logo-4chatting--blue">
+              4<span>chatting</span>
+            </div>
+          </div>
 
           <p className="text-sm small-muted mb-4" style={{ opacity: 0.95 }}>
             Escolha sua conta para começar
